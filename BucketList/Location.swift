@@ -11,6 +11,6 @@ struct Location: Identifiable, Codable, Equatable {
     let id: UUID
     let name: String
     let description: String
-    let langtitude: Double
+    let latitude: Double
     let longitude: Double
 }
