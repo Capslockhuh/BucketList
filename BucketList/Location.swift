@@ -10,8 +10,8 @@ import MapKit
 
 struct Location: Identifiable, Codable, Equatable {
     let id: UUID
-    let name: String
-    let description: String
+    var name: String
+    var description: String
     let latitude: Double
     let longitude: Double
     
