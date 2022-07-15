@@ -15,7 +15,10 @@ struct ContentView: View {
     
     @State private var locations = [Location]()
     
+    @State private var selectedPlace: Location?
+    
     @State private var isUnlocked = false
+    
     var body: some View {
         ZStack {
             Map(coordinateRegion: $mapRegion, annotationItems: locations) { location in
@@ -29,6 +32,9 @@ struct ContentView: View {
                             .clipShape(Circle())
 
                         Text(location.name)
+                    }
+                    .onTapGesture {
+                        selectedPlace = location
                     }
                 }
             }
@@ -55,6 +61,9 @@ struct ContentView: View {
                     .padding(.trailing)
                 }
             }
+        }
+        .sheet(item: $selectedPlace) { place in
+            Text(place.name)
         }
     }
     
