@@ -63,11 +63,11 @@
 			children = (
 				6EFC2C6F287EAAB700A5377C /* BucketListApp.swift */,
 				6EFC2C71287EAAB700A5377C /* ContentView.swift */,
-				6E6F38672882CB2B00C06635 /* FileManager-DocumentsDirectory.swift */,
 				6EFC2C7F2881595400A5377C /* EditView.swift */,
 				6E6F38652882A4C200C06635 /* ContentView-ViewModel.swift */,
 				6EFC2C7D2880799900A5377C /* Location.swift */,
 				6E6F38632881780500C06635 /* Result.swift */,
+				6E6F38672882CB2B00C06635 /* FileManager-DocumentsDirectory.swift */,
 				6EFC2C73287EAAB900A5377C /* Assets.xcassets */,
 				6EFC2C75287EAAB900A5377C /* Preview Content */,
 			);

@@ -15,7 +15,10 @@ extension ContentView {
         @Published private(set) var locations: [Location]
     @Published var selectedPlace: Location?
         
-    @Published var isUnlocked = true // testing - change later to false
+    @Published var isUnlocked = false
+        
+    @Published var showingAuthenticationAlert = false
+    
         
     func addLocation() {
         let newLocation = Location(id: UUID(), name: "New location", description: "", latitude: mapRegion.center.latitude, longitude: mapRegion.center.longitude)
@@ -59,6 +62,9 @@ extension ContentView {
                         }
                     } else {
                         // error
+                        Task { @MainActor in
+                            self.showingAuthenticationAlert = true
+                        }
                     }
                 }
             } else {

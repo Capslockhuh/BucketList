@@ -68,6 +68,9 @@ struct ContentView: View {
                 viewModel.update(location: $0)
             }
         }
+        .alert("Authentication failed", isPresented: $viewModel.showingAuthenticationAlert) {
+            Button("Try again", role: .cancel) { }
+        }
     }
 }
 
