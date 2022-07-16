@@ -15,7 +15,7 @@ extension ContentView {
         @Published private(set) var locations: [Location]
     @Published var selectedPlace: Location?
         
-    @Published var isUnlocked = false
+    @Published var isUnlocked = true // testing - change later to false
         
     func addLocation() {
         let newLocation = Location(id: UUID(), name: "New location", description: "", latitude: mapRegion.center.latitude, longitude: mapRegion.center.longitude)
