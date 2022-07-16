@@ -45,8 +45,7 @@ struct ContentView: View {
                 HStack {
                     Spacer()
                     Button {
-                        let newLocation = Location(id: UUID(), name: "New location", description: "", latitude: viewModel.mapRegion.center.latitude, longitude: viewModel.mapRegion.center.longitude)
-                        viewModel.locations.append(newLocation)
+                        viewModel.addLocation()
                     } label: {
                         Image(systemName: "plus")
                     }
@@ -60,10 +59,8 @@ struct ContentView: View {
             }
         }
         .sheet(item: $viewModel.selectedPlace) { place in
-            EditView(location: place) { newLocation in
-                if let index = viewModel.locations.firstIndex(of: place) {
-                    viewModel.locations[index] = newLocation
-                }
+            EditView(location: place) {
+                viewModel.update(location: $0)
             }
         }
     }
